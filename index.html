@@ -281,6 +281,11 @@
   .cta h2 { font-family: "Crimson Text", Georgia, serif; font-weight: 600; font-size: clamp(1.8rem, 3.4vw, 2.4rem); line-height: 1.2; }
   .cta-side { max-width: 420px; color: #d6ccc6; }
   .cta-side .btns { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  .mail-box { display: flex; align-items: center; gap: 8px; margin-top: 16px; background: var(--dark-2); border-radius: 10px; padding: 6px 6px 6px 14px; max-width: 100%; }
+  .mail-addr { color: #fff; font-weight: 600; font-size: .92rem; user-select: all; overflow-wrap: anywhere; flex: 1; min-width: 0; }
+  .mail-copy { background: var(--yellow); color: var(--dark); border: none; border-radius: 8px; padding: 7px 14px; font-weight: 700; font-family: inherit; cursor: pointer; }
+  .mail-alt { margin-top: 10px; font-size: .85rem; color: #b5a9a2; }
+  .mail-alt a { color: var(--yellow); }
   .cta-foot { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; padding-top: 22px; font-size: .88rem; color: #b5a9a2; }
   .cta-foot nav { display: flex; gap: 4px; background: var(--dark-2); padding: 4px; border-radius: 8px; flex-wrap: wrap; }
   .cta-foot nav a { text-decoration: none; padding: 5px 10px; border-radius: 6px; }
@@ -435,7 +440,7 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.5-2.25 3.1V21H9z"/></svg>LinkedIn</a>
       <a class="social unsplash" href="https://unsplash.com/provvidence" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 3h8v5H8zM3 11h5v5h8v-5h5v10H3z"/></svg>Unsplash</a>
-      <a class="social" href="mailto:chandrapaulmolathoti@gmail.com">
+      <a class="social" href="mailto:chandrapaulmolathoti@gmail.com?subject=Hello%20Chandra">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a>
       <div class="ai-pill">
       <span class="ai-label">✦ Ask AI</span>
@@ -480,7 +485,7 @@
     <div class="about">
       <div class="box">
         <h3>Who I am <span>◎</span></h3>
-        <p>Inaugural Digital Marketing Lead at PrediSurge, with 3+ years of professional experience, specialised in turning websites into lead-generation engines.</p>
+        <p>A full-stack digital marketer with a drive to build things. Engineer by training, business-school educated, with 3+ years of turning websites into lead-generation engines, end to end.</p>
       </div>
       <div class="box">
         <h3>What I do <span>✦</span></h3>
@@ -509,7 +514,7 @@
         <p class="no">01</p><div class="title-row"><h3>Website revamp</h3><span class="metric">+186% traffic YoY</span></div>
         <ul>
           <li>Led the end-to-end website revamp from brief to launch, owning a ~€50k budget: selected and managed the external web agency, negotiated pricing aligned with budget ambitions, and delivered in a record 4 months</li>
-          <li>Led the CMS migration from WordPress to Webflow, raising technical performance (load times, Core Web Vitals, technical SEO) and enabling multi-language and multi-region scalability and accessibility, with AI-automated localisation fast-tracking the roll-out of regional sites</li>
+          <li>Led the CMS migration from WordPress to Webflow, raising technical performance (load times, Core Web Vitals, technical SEO) and enabling multi-language and multi-region scalability and accessibility</li>
         </ul>
         <ul>
           <li>Designed a new user journey built on user-centric, marketing-driven CRO principles, covering navigation, solution pages and product pages, to drive higher website conversion</li>
@@ -720,9 +725,14 @@
       <div class="cta-side">
         <p>Open to new opportunities. Feel free to reach out.</p>
         <div class="btns">
-          <a class="btn btn-yellow" href="mailto:chandrapaulmolathoti@gmail.com">Email me ↗</a>
+          <a class="btn btn-yellow" href="mailto:chandrapaulmolathoti@gmail.com?subject=Hello%20Chandra">Email me ↗</a>
           <a class="btn btn-ghost-light" href="https://linkedin.com/in/chandra-paul-molathoti" target="_blank">LinkedIn</a>
         </div>
+        <div class="mail-box">
+          <span class="mail-addr">chandrapaulmolathoti@gmail.com</span>
+          <button class="mail-copy" id="copyMail" type="button">Copy</button>
+        </div>
+        <p class="mail-alt">Or write from <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=chandrapaulmolathoti@gmail.com&amp;su=Hello%20Chandra" target="_blank" rel="noopener">Gmail</a> · <a href="https://outlook.live.com/mail/0/deeplink/compose?to=chandrapaulmolathoti@gmail.com&amp;subject=Hello%20Chandra" target="_blank" rel="noopener">Outlook</a></p>
       </div>
     </div>
     <div class="cta-foot">
@@ -882,6 +892,16 @@
       return chip;
     };
     for (let k = 0; k < 4; k++) tools.forEach(t => track.appendChild(make(t)));   // repeat so the ribbon never runs out
+  });
+
+  // ----- Copy email address -----
+  document.getElementById('copyMail').addEventListener('click', e => {
+    const btn = e.currentTarget, addr = document.querySelector('.mail-addr').textContent;
+    const done = () => { btn.textContent = 'Copied'; setTimeout(() => btn.textContent = 'Copy', 1800); };
+    if (navigator.clipboard) navigator.clipboard.writeText(addr).then(done, () => {
+      const r = document.createRange(); r.selectNodeContents(document.querySelector('.mail-addr'));
+      getSelection().removeAllRanges(); getSelection().addRange(r);
+    });
   });
 
   // ----- Animated numbers -----
