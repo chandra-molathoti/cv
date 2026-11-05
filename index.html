@@ -30,6 +30,18 @@
     background: radial-gradient(600px 420px at 30% 25%, rgba(202,223,239,.75), transparent 70%),
                 radial-gradient(500px 400px at 85% 80%, rgba(229,240,239,.9), transparent 70%); }
 
+  /* ---------- ORANGE GRAIN (warm texture; delete this block to remove it) ---------- */
+  body::before { content: ""; position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: .32;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.91 0 0 0 0 0.45 0 0 0 0 0.23 0 0 0 2.2 -1.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  /* ---------- ORANGE GRADIENT TOUCH (delete this block to remove it) ---------- */
+  .warm { position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background: radial-gradient(720px 520px at 88% 6%, rgba(232,116,59,.30), transparent 70%),
+                radial-gradient(560px 460px at 4% 70%, rgba(232,116,59,.16), transparent 70%); }
+  .panel { background: radial-gradient(640px 420px at 100% 0%, rgba(232,116,59,.30), transparent 65%), var(--dark) !important; }
+  .testi { background: radial-gradient(560px 380px at 0% 100%, rgba(232,116,59,.26), transparent 65%), var(--dark) !important; }
+  .cta { background: radial-gradient(620px 420px at 100% 100%, rgba(232,116,59,.32), transparent 65%), var(--dark) !important; }
+
   /* ---------- BUTTONS ---------- */
   .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 8px; font-weight: 600; font-size: .95rem; text-decoration: none; cursor: pointer; border: 1.5px solid transparent; font-family: inherit; transition: .2s; }
   .btn-yellow { background: var(--yellow); color: var(--dark); }
@@ -385,6 +397,7 @@
 </style>
 </head>
 <body>
+<div class="warm"></div>
 
 <!-- ================= NAV ================= -->
 <div class="navwrap">
