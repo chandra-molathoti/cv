@@ -35,6 +35,7 @@
   .btn-yellow { background: var(--yellow); color: var(--dark); }
   .btn-yellow:hover { background: var(--yellow-2); }
   .btn-dark { background: var(--dark); color: #fff; }
+  .btn-sm { padding: 8px 16px; font-size: .85rem; }
   .btn-ghost { border-color: #cfc4ba; color: var(--text); background: transparent; }
   .btn-ghost:hover { border-color: var(--dark); }
   .btn-ghost-light { border-color: #6b5d56; color: #fff; background: transparent; }
@@ -57,10 +58,10 @@
   .nav-grad.resume { background: linear-gradient(80deg, var(--mint) 0%, #ffffff 100%); }
   .ar { font-size: .9em; }
   .pills .ar { display: none; margin-left: auto; }
-  .burger { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; padding: 0 6px; }
+  .burger { display: none; background: none; border: none; color: #fff; cursor: pointer; padding: 4px 6px; line-height: 0; }
 
   /* ---------- HERO ---------- */
-  .hero { position: relative; border-left: 1px solid var(--line); border-right: 1px solid var(--line); padding: 110px 48px 70px; overflow: hidden; }
+  .hero { position: relative; padding: 110px 48px 70px; overflow: hidden; }
   .watermark { position: absolute; right: -40px; top: 120px; font-size: 520px; font-weight: 800; line-height: .8; color: rgba(202,223,239,.45); pointer-events: none; user-select: none; letter-spacing: -30px; }
   .hero h1 { position: relative; font-size: clamp(2.4rem, 6.4vw, 5.4rem); font-weight: 800; line-height: 1.04; letter-spacing: -2px; }
   .hero h1 .l1 { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
@@ -76,11 +77,11 @@
   .split .play { background: var(--yellow); border-radius: 0 8px 8px 0; width: 48px; display: grid; place-items: center; text-decoration: none; color: var(--dark); }
 
   /* ---------- FOLLOW ---------- */
-  .follow { border: 1px solid var(--line); border-top: none; padding: 34px 48px 30px; margin-bottom: 40px; border-radius: 0 0 18px 18px; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; }
-  .follow p { font-size: 1.2rem; line-height: 1.3; padding-bottom: 30px; }
+  .follow { border-top: 1px solid var(--line); padding: 34px 48px 30px; margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .follow p { font-size: 1.2rem; line-height: 1.3; }
   .follow p b { font-weight: 600; }
-  .socials { display: flex; align-items: flex-end; }
-  .social { display: inline-flex; align-items: center; gap: 10px; padding: 14px 30px; border: 2px solid var(--dark); border-radius: 40px; background: #fff; font-size: 1.15rem; font-weight: 500; text-decoration: none; margin-left: -6px; transition: .25s; }
+  .socials { display: flex; align-items: center; }
+  .social { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border: 1.5px solid var(--dark); border-radius: 40px; background: #fff; font-size: 1.05rem; font-weight: 500; text-decoration: none; margin-left: 10px; transition: .25s; }
   .social:hover { background: var(--yellow); }
   .social.tilt { transform: rotate(-12deg) translateY(-26px); }
   .social.tilt:hover { transform: rotate(-6deg) translateY(-30px); }
@@ -96,9 +97,9 @@
   .ai-fb { color: var(--dark); font-size: 1rem; }
 
   /* ---------- DARK PANEL ---------- */
-  .panel { background: var(--dark); border-radius: 22px; padding: 40px 32px 32px; position: relative; overflow: hidden; color: #fff; }
+  .panel { background: var(--dark); border-radius: 22px; padding: 32px; position: relative; overflow: hidden; color: #fff; }
   .big-word { position: absolute; top: 10px; left: 0; right: 0; text-align: center; font-size: clamp(5rem, 15vw, 13rem); font-weight: 800; color: rgba(255,255,255,.07); letter-spacing: 6px; pointer-events: none; line-height: 1; }
-  .bento { position: relative; display: grid; grid-template-columns: 1.35fr 1fr 1fr; grid-template-rows: auto auto; gap: 14px; margin-top: 70px; }
+  .bento { position: relative; display: grid; grid-template-columns: 1.35fr 1fr 1fr; grid-template-rows: auto auto; gap: 14px; margin-top: 0; }
   .tile { position: relative; overflow: hidden; background: #fff; border: 1px solid rgba(255,255,255,.5); padding: 22px 24px 24px; display: flex; flex-direction: column; justify-content: flex-start; min-height: 190px; transition: transform .3s, border-color .3s; }
   .tile:hover { transform: translateY(-4px); border-color: var(--yellow); }
   .t1 { grid-row: span 2; border-radius: 120px 18px 18px 18px; background: linear-gradient(160deg, var(--mint) 0%, var(--yellow) 55%, #9fc0dd 100%); border-color: transparent; padding-top: 56px; }
@@ -236,7 +237,7 @@
   .ph { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 3px solid var(--yellow); flex-shrink: 0; }
   .ph-fallback { display: grid; place-items: center; background: var(--yellow); color: var(--dark); font-weight: 800; }
   .reader { background: var(--dark-2); border-radius: 18px; padding: 26px 30px 22px; position: relative; }
-  .reader::before { content: "“"; position: absolute; top: -46px; right: 26px; font-family: "Crimson Text", Georgia, serif; font-size: 6rem; line-height: 1; color: var(--yellow); }
+  .reader::before { display: none; content: ""; position: absolute; top: -46px; right: 26px; font-family: "Crimson Text", Georgia, serif; font-size: 6rem; line-height: 1; color: var(--yellow); }
   .r-steps { display: flex; gap: 6px; margin-bottom: 18px; }
   .r-steps button { flex: 1; height: 4px; border: none; border-radius: 4px; background: #4a3f3a; cursor: pointer; padding: 0; transition: background .3s; }
   .r-steps button.done { background: var(--yellow); }
@@ -295,8 +296,7 @@
   .float-btn { position: fixed; right: 20px; bottom: 20px; z-index: 30; display: flex; box-shadow: 0 8px 20px rgba(0,0,0,.2); border-radius: 8px; }
   .float-btn button { font-family: inherit; border: none; cursor: pointer; font-weight: 600; font-size: .9rem; }
   .float-btn .a { background: var(--dark); color: #fff; padding: 12px 16px; border-radius: 8px 0 0 8px; }
-  .float-btn .ic-m { display: none; }
-  .float-btn .b { background: var(--yellow); color: var(--dark); padding: 12px 14px; border-radius: 0 8px 8px 0; }
+  .float-btn .b { background: var(--yellow); color: var(--dark); padding: 0 12px; border-radius: 0 8px 8px 0; display: grid; place-items: center; }
   .overlay { position: fixed; inset: 0; background: rgba(39,32,29,.55); backdrop-filter: blur(3px); z-index: 60; display: flex; align-items: center; justify-content: center; padding: 16px; opacity: 0; pointer-events: none; transition: opacity .4s; }
   .overlay.open { opacity: 1; pointer-events: auto; }
   .modal { background: #fff; max-width: 460px; width: 100%; border-radius: 18px; padding: 28px; position: relative; transform: translateY(30px) scale(.96); transition: transform .4s; box-shadow: 0 30px 70px rgba(39,32,29,.3); }
@@ -345,8 +345,8 @@
     .social { margin: 0; padding: 10px 20px; font-size: 1rem; }
     .social.tilt { transform: none; }
     .about { grid-template-columns: 1fr; margin-top: 20px; }
-    .panel { padding: 30px 16px 16px; }
-    .bento { margin-top: 50px; gap: 10px; }
+    .panel { padding: 16px; }
+    .bento { margin-top: 0; gap: 10px; }
     .tile { padding: 18px 16px; min-height: 150px; }
     .tile .num { font-size: clamp(1.7rem, 9vw, 2.3rem); letter-spacing: -1px; white-space: nowrap; }
     .t1 .num { font-size: clamp(2.6rem, 13vw, 3.4rem); }
@@ -374,9 +374,7 @@
     .watermark { font-size: 300px; }
     .dash { display: none; }
     .float-btn .a { display: none; }
-    .float-btn .ic-d { display: none; }
-    .float-btn .ic-m { display: inline; }
-    .float-btn .b { border-radius: 50%; width: 52px; height: 52px; padding: 0; font-size: 1.2rem; }
+    .float-btn .b { border-radius: 50%; width: 52px; height: 52px; padding: 0; }
     .float-btn { border-radius: 50%; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); }
     .next-up small { display: none; }
     .next-up { padding-left: 16px; }
@@ -387,7 +385,6 @@
 </style>
 </head>
 <body>
-<div class="glow"></div>
 
 <!-- ================= NAV ================= -->
 <div class="navwrap">
@@ -402,7 +399,7 @@
     <div class="nav-cta">
       <a class="btn nav-grad resume" href="cv.pdf" target="_blank">Resume <span class="ar">↓</span></a>
       <a class="btn nav-grad" href="#contact">Contact <span class="ar">→</span></a>
-      <button class="burger" onclick="document.getElementById('pills').classList.toggle('open')" aria-label="Menu">☰</button>
+      <button class="burger" onclick="document.getElementById('pills').classList.toggle('open')" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
 </div>
@@ -411,7 +408,6 @@
 
   <!-- ================= HERO ================= -->
   <header class="hero" id="top">
-    <div class="watermark">C</div>
     <h1>
       <span class="l1">Chandra Paul
         <!-- photo.jpg must sit in the same folder as this file -->
@@ -424,10 +420,7 @@
     </h1>
     <p class="tagline">Turning websites into lead-generation engines.</p>
     <div class="hero-btns">
-      <div class="split">
-        <a class="btn btn-dark" href="#work">Explore My Work</a>
-        <a class="play" href="#work" aria-label="Explore my work">▶</a>
-      </div>
+      <a class="btn btn-dark" href="#work">Explore my work</a>
       <a class="btn btn-ghost" href="#testimonials">Read my recommendation</a>
     </div>
   </header>
@@ -436,14 +429,14 @@
   <div class="follow">
     <p>Follow <b>Chandra</b><br>online -</p>
     <div class="socials">
-      <a class="social tilt main" href="https://linkedin.com/in/chandra-paul-molathoti" target="_blank">
+      <a class="social main" href="https://linkedin.com/in/chandra-paul-molathoti" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.5-2.25 3.1V21H9z"/></svg>LinkedIn</a>
       <a class="social unsplash" href="https://unsplash.com/provvidence" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 3h8v5H8zM3 11h5v5h8v-5h5v10H3z"/></svg>Unsplash</a>
       <a class="social" href="mailto:chandrapaulmolathoti@gmail.com?subject=Hello%20Chandra">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a>
       <div class="ai-pill">
-      <span class="ai-label">✦ Ask AI</span>
+      <span class="ai-label">Ask AI</span>
       <a href="https://chatgpt.com/?q=Who%20is%20Chandra%20Paul%20Molathoti%3F" target="_blank" rel="noopener" title="Ask ChatGPT" aria-label="Ask ChatGPT"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&amp;sz=64" alt="" width="22" height="22" onerror="this.replaceWith(Object.assign(document.createElement('b'),{textContent:'C',className:'ai-fb'}))"></a>
       <a href="https://claude.ai/new?q=Who%20is%20Chandra%20Paul%20Molathoti%3F" target="_blank" rel="noopener" title="Ask Claude" aria-label="Ask Claude"><img src="https://www.google.com/s2/favicons?domain=claude.ai&amp;sz=64" alt="" width="22" height="22" onerror="this.replaceWith(Object.assign(document.createElement('b'),{textContent:'C',className:'ai-fb'}))"></a>
       <a href="https://www.perplexity.ai/search?q=Who%20is%20Chandra%20Paul%20Molathoti%3F" target="_blank" rel="noopener" title="Ask Perplexity" aria-label="Ask Perplexity"><img src="https://www.google.com/s2/favicons?domain=perplexity.ai&amp;sz=64" alt="" width="22" height="22" onerror="this.replaceWith(Object.assign(document.createElement('b'),{textContent:'P',className:'ai-fb'}))"></a>
@@ -454,7 +447,6 @@
 
   <!-- ================= DARK PANEL: KEY NUMBERS + ABOUT ================= -->
   <div class="panel reveal">
-    <div class="big-word">CHANDRA</div>
     <div class="bento">
       <div class="tile t1">
         <div class="num" data-count="6" data-pre="€" data-suf="M">€6M</div>
@@ -484,11 +476,11 @@
     </div>
     <div class="about">
       <div class="box">
-        <h3>Who I am <span>◎</span></h3>
+        <h3>Who I am</h3>
         <p>A full-stack digital marketer with a drive to build things. Engineer by training, business-school educated, with 3+ years of turning websites into lead-generation engines, end to end.</p>
       </div>
       <div class="box">
-        <h3>What I do <span>✦</span></h3>
+        <h3>What I do</h3>
         <p>I own every layer of the digital marketing tech stack, from website, CRO, SEO/GEO and paid media to marketing automation, CRM and analytics, and build scalable digital infrastructure across the customer journey to drive growth.</p>
       </div>
     </div>
@@ -501,7 +493,7 @@
   <section id="work" class="reveal">
     <div class="head-row">
       <h2 class="h2">Work experience</h2>
-      <div class="chip-btn"><a href="cv.pdf" target="_blank">Full CV</a><span class="arrow">↗</span></div>
+      <a class="btn btn-dark btn-sm" href="cv.pdf" target="_blank">Full CV</a>
     </div>
     <div class="pos-line">
       <span class="co">PrediSurge</span>
@@ -642,7 +634,7 @@
           <img class="ph" src="raphael.jpg" alt="Raphael Doustaly" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'ph ph-fallback',textContent:'RD'}))">
           <div><b>Raphael Doustaly</b><small>Head of Marketing and Product, PrediSurge<br>My manager for 2 years</small></div>
         </div>
-        <a class="btn btn-ghost-light" href="recommendation-letter.pdf" target="_blank">Original letter (PDF) ↗</a>
+        <a class="btn btn-ghost-light" href="recommendation-letter.pdf" target="_blank">Original letter (PDF)</a>
       </div>
       <div class="reader">
         <div class="r-steps" id="rsteps"></div>
@@ -725,7 +717,7 @@
       <div class="cta-side">
         <p>Open to new opportunities. Feel free to reach out.</p>
         <div class="btns">
-          <a class="btn btn-yellow" href="mailto:chandrapaulmolathoti@gmail.com?subject=Hello%20Chandra">Email me ↗</a>
+          <a class="btn btn-yellow" href="mailto:chandrapaulmolathoti@gmail.com?subject=Hello%20Chandra">Email me</a>
           <a class="btn btn-ghost-light" href="https://linkedin.com/in/chandra-paul-molathoti" target="_blank">LinkedIn</a>
         </div>
         <div class="mail-box">
@@ -744,7 +736,7 @@
 </div>
 
 <!-- ================= FLOATING BUTTON ================= -->
-<div class="float-btn"><button class="a" onclick="openLetter()">✉ Recommendation</button><button class="b" onclick="openLetter()" aria-label="Open recommendation"><span class="ic-d">↗</span><span class="ic-m">✉</span></button></div>
+<div class="float-btn"><button class="a" onclick="openLetter()">Recommendation</button><button class="b" onclick="openLetter()" aria-label="Open recommendation"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></button></div>
 
 <!-- ================= POP-UP: SHORT RECOMMENDATION ================= -->
 <div class="overlay" id="letter" onclick="if(event.target===this) closeLetter()">
